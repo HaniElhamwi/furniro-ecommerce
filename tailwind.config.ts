@@ -1,12 +1,12 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -19,24 +19,24 @@ const config = {
     },
     extend: {
       colors: {
-        primary: "#B88E2F",
-        "primary-light": "#F9F1E7",
+        primary: "#523a28",
+        "primary-light": "#a47551",
         customBlack: "#333333",
         customGray: "#666666",
         error: "#E97171",
-        success:"#2EC1AC",
-        customGray2: "#9F9F9F"
+        success: "#2EC1AC",
+        customGray2: "#9F9F9F",
       },
       backgroundImage: {
-         "hero": "url(/images/hero.jpg)",
-         "shop-hero": "url(/images/shop_hero.png)",
+        hero: "url(/images/hero.jpg)",
+        "shop-hero": "url(/images/shop_hero.jpg)",
       },
       fontSize: {
-         "normal": "16px",
-         "header": "40px",
-         "large": "52px",
-         "20": "20px",
-         "24": "24px",
+        normal: "16px",
+        header: "40px",
+        large: "52px",
+        "20": "20px",
+        "24": "24px",
       },
       keyframes: {
         "accordion-down": {
@@ -55,6 +55,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

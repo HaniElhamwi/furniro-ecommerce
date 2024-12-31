@@ -24,22 +24,14 @@ function NavBar() {
       title: "Shop",
       link: "/shop",
     },
-    {
-      title: "About",
-      link: "/about",
-    },
-    {
-      title: "Contact",
-      link: "/contact",
-    },
   ];
 
   const icons = [
-    {
-      iconUrl: "/images/user_icon.png",
-      alt: "user icon",
-      action: () => console.log("You just clicked on the user icon"),
-    },
+    // {
+    //   iconUrl: "/images/user_icon.png",
+    //   alt: "user icon",
+    //   action: () => console.log("You just clicked on the user icon"),
+    // },
     {
       iconUrl: "/images/search_icon.png",
       alt: "search icon",
@@ -69,7 +61,11 @@ function NavBar() {
           <div className="flex justify-between mx-[41px] items-center">
             <Link href="/">
               <div>
-                <img src="/images/logo.png" alt="logo" />
+                <img
+                  src="/images/logo.png"
+                  alt="logo"
+                  className="w-[120px] h-[50px] object-center"
+                />
               </div>
             </Link>
 
@@ -78,8 +74,7 @@ function NavBar() {
                 <Link
                   href={link.link}
                   key={index}
-                  className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
-                >
+                  className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}>
                   <p>{link.title}</p>
                 </Link>
               ))}
@@ -91,13 +86,12 @@ function NavBar() {
                     src={icon.iconUrl}
                     onClick={icon.action}
                     alt={icon.alt}
-                    className="cursor-pointer"
+                    className="w-[20px] h-[20px] object-cover object-center"
                   />
                   {icon?.badgeValue ? (
                     <Badge
                       variant="destructive"
-                      className="absolute -top-3 -right-5"
-                    >
+                      className="absolute -top-3 -right-5">
                       {icon?.badgeValue}
                     </Badge>
                   ) : (
@@ -112,11 +106,14 @@ function NavBar() {
         <div
           className={` block lg:hidden shadow-sm  fixed top-0 w-full z-[999] bg-white py-4 animate-in fade-in zoom-in  ${
             menu ? " !bg-[#FFF3E3] py-2" : ""
-          } `}
-        >
+          } `}>
           <div className="flex justify-between mx-[10px]">
             <div className="flex gap-[50px] text-[16px] items-center select-none">
-              <img src="/images/logo.png" alt="logo" className="w-[7rem]" />
+              <img
+                src="/images/logo.png"
+                alt="logo"
+                className="w-[20px] h-[20px] object-cover object-center"
+              />
             </div>
             <div className="flex items-center gap-[40px]">
               {menu ? (
@@ -140,8 +137,7 @@ function NavBar() {
                   <Link
                     key={index}
                     href={link.link}
-                    className="text-black cursor-pointer"
-                  >
+                    className="text-black cursor-pointer">
                     <p>{link.title}</p>
                   </Link>
                 ))}
@@ -167,8 +163,7 @@ function NavBar() {
       {showCart && (
         <div
           className="hidden md:block absolute animate-out left-0 right-0 top-0 h-screen bg-black/20 z-[99]"
-          onClick={() => setShowCart(!showCart)}
-        ></div>
+          onClick={() => setShowCart(!showCart)}></div>
       )}
 
       <div className="hidden md:block md:absolute top-0 right-0 z-[100]">

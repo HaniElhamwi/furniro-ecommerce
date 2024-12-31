@@ -16,7 +16,7 @@ function ShopPage() {
         <ShopPaginationSection />
       </div>
 
-      <ShopBannerSection />
+      {/* <ShopBannerSection /> */}
     </div>
   );
 }

@@ -7,7 +7,6 @@ import React from "react";
 import MainButton from "../common/MainButton";
 import { useRouter } from "next-nprogress-bar";
 
-
 interface IProps {
   id: string;
   imageUrl: string;
@@ -28,7 +27,7 @@ function ProductCard({
   otherPrice,
   type,
   typeValue,
-}: IProps) {
+}: any) {
   const router = useRouter();
   const icons = [
     {
@@ -55,14 +54,9 @@ function ProductCard({
       whileHover="animate"
       viewport={{ once: false }}
       transition={{ duration: 0.4 }}
-      className="relative"
-    >
+      className="relative">
       <div className="relative">
-        <img
-          src={imageUrl}
-          alt="product"
-          className="h-[301px] w-full object-cover"
-        />
+        <img src={imageUrl} alt="product" className="w-full object-cover" />
 
         {typeValue && (
           <div
@@ -73,19 +67,18 @@ function ProductCard({
                 : type === "NEW"
                 ? "bg-success"
                 : ""
-            )}
-          >
+            )}>
             {typeValue}
           </div>
         )}
       </div>
-      <div className="bg-[#F4F5F7] p-4">
+      <div className=" p-4 text-center">
         <p className="text-customBlack text-24 font-semibold">{title}</p>
         <p className="text-customGray font-medium text-normal py-[8px]">
           {description}
         </p>
-        <div className="flex justify-between items-center">
-          <p className="text-customBlack text-20 font-semibold">{price}</p>
+        <div className="flex justify-center gap-2 items-center">
+          <p className="text-primary text-20 font-semibold">{price}$</p>
           {otherPrice && (
             <p className="line-through text-customGray">{otherPrice}</p>
           )}
@@ -97,14 +90,13 @@ function ProductCard({
         className={cn(
           "absolute p-4 left-0 right-0 top-0 bottom-0 bg-[#3A3A3A]/80"
         )}
-        variants={cardVariant}
-      >
+        variants={cardVariant}>
         <div className="pt-[30%]">
           <div className="flex justify-center">
             <MainButton
               text="View product"
               classes="bg-white text-primary font-bold hover:bg-white"
-              action={() => router.push(`/shop/product/${id}`)}
+              // action={() => router.push(`/shop/product/${id}`)}
             />
           </div>
           <div className="flex justify-center gap-5 mt-[24px]">
@@ -112,8 +104,7 @@ function ProductCard({
               <div
                 className="flex gap-1 items-center hover:cursor-pointer"
                 key={index}
-                onClick={icon.action}
-              >
+                onClick={icon.action}>
                 <div>
                   <img src={icon.iconUrl} alt="icon" />
                 </div>
